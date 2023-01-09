@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project</title>
+    <title>Test Modal</title>
     <!-- Favicon -->
     <!-- <link rel="icon" href=""> -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./css/normalize.css" />
@@ -14,51 +19,33 @@
   </head>
 
   <body>
-    <!-- HEADER -->
-    <header class="site-header">
-      <div class="site-header__container container">
-        <!-- LOGO -->
-        <div class="site-header__logo logo">
-          <a href="#" class="logo__link">
-            <img class="logo__img" src="" alt="" width="" height="" />
-          </a>
-        </div>
 
-        <!-- SITENAV -->
-        <nav class="sitenav">
-          <ul class="sitenav__list">
-            <li class="sitenav__item">
-              <a href="#" class="sitenav__link"></a>
-            </li>
-            <li class="sitenav__item">
-              <a href="#" class="sitenav__link"></a>
-            </li>
-            <li class="sitenav__item">
-              <a href="#" class="sitenav__link"></a>
-            </li>
-            <li class="sitenav__item">
-              <a href="#" class="sitenav__link"></a>
-            </li>
-          </ul>
-        </nav>
+    <!-- show btn -->
+    <button class="show-btn btn" id="show-btn" data-show-btn>Show Modal</button>
+    
+    
+    <!-- MODAL -->
+    <div class="modal hidden" data-modal>
+      <div class="modal__top">
+        <h2 class="modal__heading">This is my first modal.</h2>
+        <button class="btn close-btn" id="close-btn" data-close-btn>
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" style="transform: ;msFilter:;"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg>
+        </button>
       </div>
-    </header>
-    <!-- /HEADER -->
+      <div class="modal__bottom">
+        <h3 class="modal__title">Test modal.</h3>
+        <p class="modal__text">
+          JS Modal (modal. js) The Modal plugin is a dialog box/popup window that is displayed on top of the current page. For a tutorial about Modals, read our Bootstrap Modal Tutorial.
+        </p>
+      </div>
+    </div>
+    <!-- /MODAL -->
 
-    <!-- MAIN CONTENT -->
-    <main class="main-content">
-      <!-- HERO -->
-      <section class="hero">
-        <div class="hero__wrapper container"></div>
-      </section>
-      <!-- /HERO -->
-    </main>
-    <!-- /MAIN CONTENT -->
+    <!-- OVERLAY -->
+    <div class="overlay hidden" data-overlay></div>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="site-footer__container container"></div>
-    </footer>
-    <!-- /FOOTER -->
+
+    <!-- SCRIPTS -->
+    <script src="./js/main.js"></script>
   </body>
 </html>

@@ -1,5 +1,14 @@
 /* BLOCKS */
 /* GLOBAL */
+:root {
+  --primary-bg-color: #fff;
+  --secondary-bg-color: #555;
+  --hover-bg-color: #333;
+  --text-color: #000;
+  --secondary-text-color: #fff;
+  --font-family: "Rubik", "Arial", sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
   height: 100%;
@@ -19,7 +28,7 @@ html {
 }
 
 *:focus {
-  outline: 2px dashed black;
+  outline: 2px dashed var(--primary-bg-color);
   outline-offset: 3px;
 }
 
@@ -29,25 +38,15 @@ img {
 
 body {
   height: 100%;
-  font-family: "Arial", sans-serif;
+  font-family: var(--font-family);
   font-size: 16px;
   line-height: 1.5;
-  background-color: #fff;
+  color: var(--text-color);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/city-wallpaper.jpg") no-repeat center;
+  background-size: cover;
   display: flex;
-  flex-direction: column;
-}
-
-/* CONTAINER */
-.container {
-  width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* MAIN CONTENT */
-.main-content {
-  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
 }
 
 /* SCROLL BAR */
@@ -74,19 +73,74 @@ body {
   }
 }
 
-/* VISUALLY HIDDEN */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  -webkit-clip-path: inset(100%);
-          clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+/* HIDDEN */
+.hidden {
+  display: none;
 }
 
-/* RETINA DISPLAY *//*# sourceMappingURL=main.css.map */
+/* BUTTON STYLES */
+.btn {
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.show-btn {
+  padding: 8px 12px;
+  background: linear-gradient(180deg, rgb(80, 255, 100) 0%, rgb(26, 143, 244) 100%);
+  color: var(--text-color);
+  transition: transform 0.4s ease;
+  border-radius: 8px;
+}
+.show-btn:hover {
+  transform: scale(1.06);
+}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  background-color: #fff;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 8px;
+  padding: 15px;
+}
+@media only screen and (max-width: 576px) {
+  .modal {
+    width: 95%;
+  }
+}
+.modal__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.modal__heading {
+  font-size: 24px;
+}
+.modal__title {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+.modal__text {
+  font-size: 18px;
+}
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+}/*# sourceMappingURL=main.css.map */
